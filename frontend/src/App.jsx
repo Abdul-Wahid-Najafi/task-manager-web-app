@@ -57,7 +57,10 @@ function App() {
         {/* NEW: Task Form appears below button */}
         {showTaskForm && (
           <div className=" app-main transition-all duration-300 max-h-96 opacity-100 ease-in-out  p-4 border rounded-xl bg-gray-50 shadow-sm">
-            <TaskForm onSubmit={handleSaveTask} />
+            <TaskForm
+              onSubmit={handleSaveTask}
+              onCancel={() => setShowTaskForm(false)} // ← this hides the form
+            />
           </div>
         )}
       </header>
